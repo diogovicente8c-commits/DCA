@@ -27,6 +27,8 @@ def obter_valor_base_acao_semanal(ticker):
     """Define o valor base de investimento SEMANAL para cada ação"""
     if ticker == "NVDA":
         return 3.75  # Ritmo reduzido semanal (0.75€ * 5)
+    if ticker == "MU" or "ANET":
+        return 0.00
     return 7.50      # Valor padrão semanal para as restantes (1.50€ * 5)
 
 def analisar_tendencia(ticker_symbol, dias_atras):
@@ -88,7 +90,7 @@ with st.spinner(f"A analisar {etf_ticker}..."):
 
 # 2. Secção Ações (Agora também Semanal)
 st.subheader("📱 Estrutura Semanal (Ações)")
-acoes = ["META", "PLTR", "GOOG", "NVDA"]
+acoes = ["META", "PLTR", "GOOG", "NVDA", "MU", "ANET"]
 
 for acao in acoes:
     with st.spinner(f"A analyzing {acao}..."):
