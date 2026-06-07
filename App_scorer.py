@@ -8,7 +8,7 @@ from requests_ratelimiter import LimiterSession
 
 warnings.filterwarnings("ignore")
 
-session = LimiterSession(per_second=5)
+session = LimiterSession(per_second=1)
 
 # Configuração da página para telemóvel
 st.set_page_config(page_title="Stock Scorer", page_icon="📈", layout="centered")
