@@ -4,8 +4,11 @@ import numpy as np
 import pandas as pd
 from datetime import datetime
 import warnings
+from requests_ratelimiter import LimiterSession
 
 warnings.filterwarnings("ignore")
+
+session = LimiterSession(per_second=2)
 
 # Configuração da página para telemóvel
 st.set_page_config(page_title="Stock Scorer", page_icon="📈", layout="centered")
@@ -42,7 +45,7 @@ def safe_get(d, key, default=None):
 
 def calcular_dados_ticker(ticker_symbol):
     try:
-        ticker = yf.Ticker(ticker_symbol)
+        ticker = yf.Ticker(ticker_symbol, session=session)
         info = ticker.info
 
         if not info or "symbol" not in info:
