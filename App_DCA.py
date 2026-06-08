@@ -88,7 +88,7 @@ with st.spinner(f"A analisar {etf_ticker}..."):
 
 # 2. Secção Ações (Agora também Semanal)
 st.subheader("📱 Estrutura Semanal (Ações)")
-acoes = ["META", "PLTR", "GOOG", "NVDA","V"]
+acoes = ["META", "PLTR", "GOOG", "NVDA"]
 
 for acao in acoes:
     with st.spinner(f"A analyzing {acao}..."):
