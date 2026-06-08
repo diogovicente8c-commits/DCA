@@ -25,7 +25,7 @@ VALOR_ETF_SEMANAL = 61.25
 
 def obter_valor_base_acao_semanal(ticker):
     """Define o valor base de investimento SEMANAL para cada ação"""
-    if ticker == "META":
+    if ticker == "NVDA":
         return 3.75  # Ritmo reduzido semanal (0.75€ * 5)
     return 7.50      # Valor padrão semanal para as restantes (1.50€ * 5)
 
@@ -88,7 +88,7 @@ with st.spinner(f"A analisar {etf_ticker}..."):
 
 # 2. Secção Ações (Agora também Semanal)
 st.subheader("📱 Estrutura Semanal (Ações)")
-acoes = ["META", "PLTR", "GOOG", "NVDA"]
+acoes = ["META", "PLTR", "GOOG", "NVDA","MU"]
 
 for acao in acoes:
     with st.spinner(f"A analyzing {acao}..."):
