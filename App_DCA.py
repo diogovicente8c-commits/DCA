@@ -25,7 +25,7 @@ VALOR_ETF_SEMANAL = 61.25
 
 def obter_valor_base_acao_semanal(ticker):
     """Define o valor base de investimento SEMANAL para cada ação"""
-    if ticker == "NVDA":
+    if ticker == "PLTR":
         return 3.75  # Ritmo reduzido semanal (0.75€ * 5)
     return 7.50      # Valor padrão semanal para as restantes (1.50€ * 5)
 
